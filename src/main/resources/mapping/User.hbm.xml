@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.test.user.entity.User" table="t_user" schema="admin">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="roleCode">
+            <column name="role_code" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="organizationCode">
+            <column name="organization_code" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="varchar(2)" length="2" not-null="true"/>
+        </property>
+        <property name="inserter">
+            <column name="inserter" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="insertTime">
+            <column name="insert_time" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="updater">
+            <column name="updater" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="updateTime">
+            <column name="update_time" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
